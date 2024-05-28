@@ -34,6 +34,15 @@ function TextToSpeech(s) {
                 var audio = new Audio();
                 audio.src = audioURL;
                 audio.play();
+
+                // Create a link element to download the audio
+                var downloadLink = document.createElement("a");
+                downloadLink.href = audioURL;
+                downloadLink.download = "speech.mp3";
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+
             } else {
                 console.error('Error: ' + oHttp.statusText);
                 alert('There was an error processing the text-to-speech request.');

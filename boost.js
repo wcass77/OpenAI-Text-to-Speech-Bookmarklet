@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     document.body.addEventListener("keydown", function(event) {
         // Check if the correct key combination is pressed
-        if (event.key === "Å") {
+        if (event.key === "Å") { //opt-shift-a on Mac; change to whatever key you want
             var s = window.getSelection().toString();
             if (s) {
                 TextToSpeech(s);
@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function TextToSpeech(s) {
-    var sModelId = "tts-1";
-    var sVoiceId = "onyx";
+    var sModelId = "tts-1"; //Choos model here; API Reference: https://platform.openai.com/docs/models/tts
+    var sVoiceId = "onyx";  //Choose your voice here: https://platform.openai.com/docs/guides/text-to-speech/voice-options
     var API_KEY = ""; //Your API Key Here
 
     ShowSpinner();
